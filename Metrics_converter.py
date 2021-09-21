@@ -1,6 +1,6 @@
 def kitten_converter(many):
     return 'Мы сконверировали ' + str(many) + ' ваших котят. ' \
-           'У нас получилось ' + str(many * 2) + ' радости!'
+           'У нас получилось ' + str(many * 3) + ' радости!'
 
 
 if __name__ == "__main__":
