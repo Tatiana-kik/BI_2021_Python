@@ -1,5 +1,8 @@
-mapping_DNA = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'T', 'g': 'c', 'c': 'g', 't': 'a', 'a': 't'}
-mapping_RNA = {'G': 'C', 'C': 'G', 'U': 'A', 'A': 'U', 'g': 'c', 'c': 'g', 'u': 'a', 'a': 'u'}
+mapping_DNA = {'G': 'C', 'C': 'G', 'T': 'A', 'A': 'T',
+               'g': 'c', 'c': 'g', 't': 'a', 'a': 't'}
+mapping_RNA = {'G': 'C', 'C': 'G', 'U': 'A', 'A': 'U',
+               'g': 'c', 'c': 'g', 'u': 'a', 'a': 'u'}
+
 
 def check_sequence(sequence):
     trust = set(sequence) <= set(mapping_DNA.keys())
@@ -10,6 +13,7 @@ def check_sequence(sequence):
         return True, 'RNA'
     else:
         return False, ''
+
 
 def transcribe(sequence, type):
     result = []
@@ -22,6 +26,7 @@ def transcribe(sequence, type):
             result.append(nucleotide)
     return "".join(result)
 
+
 def complement(sequence, type):
     mapping = {'DNA': mapping_DNA, 'RNA': mapping_RNA}
     result = ''
@@ -29,13 +34,16 @@ def complement(sequence, type):
         result = result + mapping[type][nucleotide]
     return result
 
+
 def reverse(sequence, type):
     return sequence[::-1]
+
 
 def reverse_complement(sequence, type):
     reversed_sequence = reverse(sequence, type)
     reversed_complemented = complement(reversed_sequence, type)
     return reversed_complemented
+
 
 def do_command(command):
     action = {
@@ -43,30 +51,39 @@ def do_command(command):
         'complement': complement,
         'reverse complement': reverse_complement
     }
-    correctness = False
-    while not correctness:
-        enter_sequence = input("Please enter sequence you want to " + command + ": \n")
-        correct, type_sequence = check_sequence(enter_sequence)
-        if not correct:
+    is_correct = False
+    while not is_correct:
+        sequence = input("Please enter sequence you want to "
+                         + command + ": \n")
+        good, type_of_seq = check_sequence(sequence)
+        if not good:
             print('Wrong alphabet! Try again:')
         else:
-            print(action[command](enter_sequence, type_sequence))
-            correctness = True
+            print(action[command](sequence, type_of_seq))
+            is_correct = True
+
 
 if __name__ == "__main__":
     while True:
-        inserted_command = input('Please enter command from the list: \nexit — завершение исполнения программы\n'
-                                 + 'transcribe — напечатать транскрибированную последовательность\n'
-                                 + 'reverse — напечатать перевёрнутую последовательность\n'
-                                 + 'complement — напечатать комплементарную последовательность\n'
-                                 + 'reverse complement — напечатать обратную комплементарную последовательность\n')
+        inserted_command = input(
+            'Please enter command from the list:'
+            ' \nexit — завершение исполнения программы\n'
+            + 'transcribe — напечатать '
+              'транскрибированную последовательность\n'
+            + 'reverse — напечатать '
+              'перевёрнутую последовательность\n'
+            + 'complement — напечатать '
+              'комплементарную последовательность\n'
+            + 'reverse complement — напечатать обратную '
+              'комплементарную последовательность\n')
         if inserted_command == 'exit':
             print("Hasta la vista, baby!")
             break
         if inserted_command == 'transcribe':
             correctness = False
             while not correctness:
-                enter_sequence = input('Please enter sequence you want to transcribe:\n')
+                enter_sequence = input(
+                    'Please enter sequence you want to transcribe:\n')
                 correct, type_sequence = check_sequence(enter_sequence)
                 if not correct:
                     print('Wrong alphabet! Try again:')
