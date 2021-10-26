@@ -21,7 +21,7 @@ Compatibility with other python version was not tested.
 You should have some set of software in your system. You can setup them using these commands:
 
 `sudo apt update`<br>
-`sudo apt install git python3.9 python3.9-venv libgl-dev libglib2.0-0`
+`sudo apt install git python3.9 python3.9-venv libgl-dev libglib2.0-0 libmtdev-dev`
 
 ## 3. Step-by-step instruction
 
