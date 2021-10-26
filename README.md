@@ -1,27 +1,33 @@
-# Python BIO2021
-## Test repository for Python educational course BIOIF BIO Online 2021/22
+## 1. Hello
 
-###### Home Work 1, Task 1:
-**Написать утилиту для работы с последовательностями нуклеиновых кислот.**
+This is my awersome research on virtual environments. The article is available at doi:10.1111/1000-7 
+You can easily reproduce my results by running scripts locally.
+Please cite me!
 
-Необходимо реализовать программу, которая в бесконечном цикле считывает команды от
-пользователя. После команды программа должна запрашивать у пользователя
-последовательность нуклеиновой кислоты и распечатывать результат.
+## 2. Prerequirements
 
-**Список команд:**
-- **exit** — завершение исполнения программы
-- **transcribe** — напечатать транскрибированную последовательность
-- **reverse** — напечатать перевёрнутую последовательность
-- **complement** — напечатать комплементарную последовательность
-- **reverse complement** — напечатать обратную комплементарную последовательность
+### 2.1. OS version
 
+This project and instruction was tested on Ubuntu 20.04.
+Step-by-step instruction listed below might not work correctly on other OS.
 
-**Требования:**
+### 2.2. Python version
 
-- Программа должна сохранять регистр символов (напр. complement AtGc это TaCg)
-- Программа должна работать только с последовательностями нуклеиновых кислот. К примеру, последовательность AUTGC не может существовать, так как содержит T и U, такие случаи нужно обрабатывать и сообщать об этом пользователю (см. пример).
-- Запрещается использование сторонних модулей.
+This project is using some python features that are available only in python3.9.
+Compatibility with other python version was not tested.
 
-**Использование:**
-`python HomeWork1.py`
+### 2.3. System software
 
+You should have some set of software in your system. You can setup them using these commands:
+
+`sudo apt update`<br>
+`sudo apt install git python3.9 python3.9-venv libgl-dev libglib2.0-0 libmtdev-dev`
+
+## 3. Step-by-step instruction
+
+1. Clone the repo.<br> `git clone https://github.com/krglkvrmn/Virtual_environment_research`
+1. Make virtual evironment.<br>  `python3.9 -m venv vpain`
+1. Switch to virtual environment.<br> `source vpain/bin/activate`
+1. Install python requirements.<br> `pip install -r Virtual_environment_research/requirements.txt`
+1. And run the project's script.<br> `python Virtual_environment_research/pain.py`
+1. Enjoy!
