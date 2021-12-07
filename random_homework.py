@@ -104,12 +104,12 @@ def task_2():
     mean_line_y = []
 
     # make measurement
-    for l in range(1, max_list_len + 1):
-        print(f'Measure duration for len={l}/{max_list_len}:  ', end='')
+    for ln in range(1, max_list_len + 1):
+        print(f'Measure duration for len={ln}/{max_list_len}:  ', end='')
         durs = []  # sort durations for current list length
         for i in range(attempts):
             # create random list
-            lst = list(np.random.randint(0, 1000, l))
+            lst = list(np.random.randint(0, 1000, ln))
             #  print(lst)
             t1 = time.time()
             monkey_sort(lst)
@@ -122,7 +122,7 @@ def task_2():
                 sys.stdout.flush()
             # print(f'dur:  {dur}')
         dur_by_length.append(durs)
-        mean_line_x.append(l)
+        mean_line_x.append(ln)
         mean_line_y.append(sum(durs) / len(durs))
         print('')  # new line
     # print(dur_by_length)
