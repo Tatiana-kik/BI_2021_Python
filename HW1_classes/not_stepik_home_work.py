@@ -217,7 +217,7 @@ class FastaStatistics():
         pylab.xticks(range(len(aminos)), list(aminos.keys()))
         pylab.hist(aminos, bins=400, linewidth=10)
         # name axis
-        pylab.title(f'Distribution of aminos')
+        pylab.title('Distribution of aminos')
         pylab.xlabel("Amino name")
         pylab.ylabel("Amino count")
         # draw
