@@ -32,10 +32,34 @@ length 1-10 characters.
 1. Replacement - probability 25%, replace 2 subsequences in random positions
 and with random length of 1-20 characters.
 
-## 5. Execution
+## 5. Task 3 - generator iter_append.
+
+I created a generator `iter_append(iterable, item)` to iterate in some iterable object and append the item after the last 
+iteration in iterable.
+
+Parameter:
+* iterable - some iterable object.
+
+Yield value:
+* item from iterable, or
+* appended item
+
+## 6. Task 4 - nested list unpacker.
+
+I created a function `nested_list_unpacker` - a generator that unpacks nested list.
+
+Parameter:
+* lst - nested list to unpack
+
+Yield values:
+* list item or nested list item
+
+## 7. Execution
 
 To execute you need to run script main.py as a single file application
 `python main.py`:
 
 * To run demonstration of work task1 - uncomment line `task1_test()` at the bottom of file.
 * To run demonstration of work task2 - uncomment line `task2_test()` at the bottom of file.
+* To run demonstration of work task3 - uncomment line `task3_test()` at the bottom of file.
+* To run demonstration of work task4 - uncomment line `task4_test()` at the bottom of file.
